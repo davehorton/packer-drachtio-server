@@ -10,6 +10,8 @@
     "drachtio_version": "v0.8.2",
     "nodejs_version": "v10.16.0",
     "install_nodejs": "false",
+    "install_rtpengine": "false",
+    "rtp_engine_version": "mr7.3.1.2",
     "cloud_provider": "aws",
     "remove_source": "true"
   },
@@ -46,6 +48,8 @@
         "--extra-vars", "drachtioBranch={{user `drachtio_version`}}",
         "--extra-vars", "install_nodejs={{user `install_nodejs`}}",
         "--extra-vars", "nodeVersion={{user `nodejs_version`}}",
+        "--extra-vars", "install_rtpengine={{user `install_rtpengine`}}",
+        "--extra-vars", "rtp_engine_version={{user `rtp_engine_version`}}",
         "--extra-vars", "remove_source={{user `remove_source`}}",
         "--extra-vars", "cloud_provider={{user `cloud_provider`}}" ]
     }

@@ -3,4 +3,5 @@
   become: yes
   roles:
     - ./roles/ansible-role-drachtio
+    - {role: ./roles/ansible-role-rtpengine, when: install_rtpengine|bool}
     - {role: ./roles/ansible-role-nodejs, when: install_nodejs|bool}
