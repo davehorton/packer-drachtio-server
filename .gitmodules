@@ -1,3 +1,6 @@
 [submodule "playbooks/roles/ansible-role-drachtio"]
 	path = playbooks/roles/ansible-role-drachtio
 	url = git@github.com:davehorton/ansible-role-drachtio.git
+[submodule "playbooks/roles/ansible-role-nodejs"]
+	path = playbooks/roles/ansible-role-nodejs
+	url = git@github.com:davehorton/ansible-role-nodejs.git

@@ -56,6 +56,21 @@ EC2 Instance type to use when building the AMI.
 drachtio tag or branch to build
 
 ```
+"install_nodejs": "false",
+```
+whether to install Node.js
+
+```
+"nodejs_version": "v10.16.0",
+```
+Node.js version to install
+
+```
+"remove_source": "true"
+```
+whether to remove source build directories, or leave them on the instance
+
+```
 "cloud_provider": "aws"
 ```
-Cloud provider the AMI will on.
+Cloud provider the AMI will be built on.

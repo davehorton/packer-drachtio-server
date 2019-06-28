@@ -8,7 +8,10 @@
     "ami_description": "EC2 AMI drachtio server v0.8.2 Ubuntu 18.04", 
     "instance_type": "t2.medium",
     "drachtio_version": "v0.8.2",
-    "cloud_provider": "aws"
+    "nodejs_version": "v10.16.0",
+    "install_nodejs": "false",
+    "cloud_provider": "aws",
+    "remove_source": "true"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -39,7 +42,12 @@
     {
       "type": "ansible",
       "playbook_file": "./playbooks/drachtio.yaml",
-      "extra_arguments": [ "--extra-vars", "drachtioBranch={{user `drachtio_version`}} cloud_provider={{user `cloud_provider`}}" ]
+      "extra_arguments": [ "--ssh-extra-args", "-o IdentitiesOnly=yes", 
+        "--extra-vars", "drachtioBranch={{user `drachtio_version`}}",
+        "--extra-vars", "install_nodejs={{user `install_nodejs`}}",
+        "--extra-vars", "nodeVersion={{user `nodejs_version`}}",
+        "--extra-vars", "remove_source={{user `remove_source`}}",
+        "--extra-vars", "cloud_provider={{user `cloud_provider`}}" ]
     }
   ]
 }
