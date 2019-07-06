@@ -3,9 +3,8 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "region": "us-east-1",
-    "source_ami": "ami-024a64a6685d05041",
     "ssh_username": "ubuntu",
-    "ami_description": "EC2 AMI drachtio server v0.8.2 Ubuntu 18.04", 
+    "ami_description": "drachtio server on debian stretch", 
     "instance_type": "t2.medium",
     "nodejs_version": "v10.16.0",
     "install_drachtio": "true",
@@ -29,10 +28,18 @@
     "access_key": "{{user `aws_access_key`}}",
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "{{user `region`}}",
-    "source_ami": "{{user `source_ami`}}",
+    "source_ami_filter": {
+      "filters": {
+        "virtualization-type": "hvm",
+        "name": "debian-stretch-hvm-x86_64-gp2-*",
+        "root-device-type": "ebs"
+      },
+      "owners": ["379101102735"],
+      "most_recent": true
+    },
     "instance_type": "{{user `instance_type`}}",
     "ssh_username": "{{user `ssh_username`}}",
-    "ami_name": "drachtio-server-{{user `drachtio_version`}}-fullbundle-stretch-{{isotime |clean_ami_name}}",
+    "ami_name": "drachtio-server-{{user `drachtio_version`}}-{{isotime |clean_ami_name}}",
     "ami_description": "{{user `ami_description`}}", 
     "tags": {
       "role": "drachtio-server"
