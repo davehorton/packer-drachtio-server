@@ -13,7 +13,7 @@ $ git submodule update --init --recursive
 
 then..
 
-to build a simple drachtio server AMI on Ubuntu 18.04:
+to build a simple drachtio server AMI on Debian Stretch:
 ```
 $  packer build  -var 'aws_access_key=XXXXX' \
 -var 'aws_secret_key=YYYYY' \
@@ -88,12 +88,12 @@ The region to create the AMI in
 Source AMI to use.
 
 ```
-ssh_username": "ubuntu"
+ssh_username": "admin"
 ```
 ssh username to use when connecting to instance for provisioning
 
 ```
-"ami_description": "EC2 AMI drachtio server v0.8.2 Ubuntu 18.04"
+"ami_description": "drachtio server on debian stretch"
 ```
 AMI description.
 
@@ -161,8 +161,3 @@ max number of seconds of audio to buffer by freeswitch module mod_audio_fork
 "remove_source": "true"
 ```
 whether to remove source build directories, or leave them on the instance
-
-```
-"cloud_provider": "aws"
-```
-Cloud provider the AMI will be built on.
