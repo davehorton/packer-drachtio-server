@@ -3,7 +3,7 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "region": "us-east-1",
-    "ssh_username": "ubuntu",
+    "ssh_username": "admin",
     "ami_description": "drachtio server on debian stretch", 
     "instance_type": "t2.medium",
     "nodejs_version": "v10.16.0",
@@ -21,7 +21,7 @@
     "mod_audio_fork_service_threads": "3",
     "mod_audio_fork_buffer_secs": "2",
     "cloud_provider": "aws",
-    "remove_source": "true"
+    "remove_source": "false"
   },
   "builders": [{
     "type": "amazon-ebs",
